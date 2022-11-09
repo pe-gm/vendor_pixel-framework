@@ -16,13 +16,22 @@
             settings:useAdminDisabledSummary="true"
             settings:userRestriction="no_config_brightness" />
 
-        <com.android.settingslib.PrimarySwitchPreference
+        <com.android.settings.display.AutoBrightnessPreference
             android:fragment="com.android.settings.display.AutoBrightnessSettings"
             android:key="auto_brightness_entry"
             android:title="@string/auto_brightness_title"
             settings:controller="com.android.settings.display.AutoBrightnessPreferenceController"
             settings:useAdminDisabledSummary="true"
             settings:userRestriction="no_config_brightness" />
+
+        <com.android.settingslib.PrimarySwitchPreference
+            android:fragment="com.android.settings.accessibility.ToggleReduceBrightColorsPreferenceFragment"
+            android:icon="@drawable/ic_reduce_bright_colors"
+            android:key="reduce_bright_colors_preference"
+            android:persistent="false"
+            android:title="@string/reduce_bright_colors_preference_title"
+            settings:controller="com.android.settings.accessibility.ReduceBrightColorsPreferenceController"
+            settings:keywords="@string/keywords_reduce_bright_colors" />
 
     </PreferenceCategory>
 
@@ -204,6 +213,11 @@
             android:key="theme"
             android:summary="@string/summary_placeholder"
             android:title="@string/device_theme" />
+
+        <ListPreference
+            android:key="display_cutout_emulation"
+            android:title="@string/display_cutout_emulation"
+            settings:keywords="@string/display_cutout_emulation_keywords" />
 
         <Preference
             android:fragment="com.android.settings.display.VrDisplayPreferencePicker"
