@@ -124,6 +124,8 @@ import com.google.android.systemui.reversecharging.ReverseChargingViewController
 import com.google.android.systemui.smartspace.SmartSpaceController;
 import com.google.android.systemui.statusbar.KeyguardIndicationControllerGoogle;
 
+import com.android.systemui.statusbar.policy.BurnInProtectionController;
+
 import java.util.Optional;
 import java.util.concurrent.Executor;
 
@@ -143,6 +145,8 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
     private final SysuiStatusBarStateController mStatusBarStateController;
     private final SmartSpaceController mSmartSpaceController;
     private final NotificationLockscreenUserManagerGoogle mNotificationLockscreenUserManagerGoogle;
+
+    private final BurnInProtectionController mBurnInProtectionController;
 
     private long mAnimStartTime;
     private int mReceivingBatteryLevel;
@@ -246,6 +250,7 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
             Optional<ReverseChargingViewController> reverseChargingViewControllerOptional,
             KeyguardIndicationControllerGoogle keyguardIndicationControllerGoogle,
             TunerService tunerService,
+            BurnInProtectionController burnInProtectionController,
             @Main Handler refreshNavbarHandler) {
         super(context, notificationsController, fragmentService, lightBarController,
                 autoHideController, statusBarWindowController, statusBarWindowStateController,
@@ -276,7 +281,7 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
                 messageRouter, wallpaperManager, startingSurfaceOptional, activityLaunchAnimator,
                 jankMonitor, deviceStateManager, wiredChargingRippleController,
                 dreamManager, cameraLauncherLazy, lightRevealScrimViewModelLazy, tunerService,
-                refreshNavbarHandler);
+                refreshNavbarHandler, burnInProtectionController);
         mContext = context;
         mBatteryStateChangeCallback = new BatteryController.BatteryStateChangeCallback() {
             @Override
@@ -309,6 +314,7 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
         mReverseChargingViewControllerOptional = reverseChargingViewControllerOptional;
         mKeyguardIndicationController = keyguardIndicationControllerGoogle;
         mStatusBarStateController = statusBarStateController;
+        mBurnInProtectionController = burnInProtectionController;
         mWallpaperNotifier = wallpaperNotifier;
         mSmartSpaceController = smartSpaceController;
         mNotificationLockscreenUserManagerGoogle = notificationLockscreenUserManagerGoogle;
