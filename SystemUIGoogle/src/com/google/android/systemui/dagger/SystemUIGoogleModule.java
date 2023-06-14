@@ -103,6 +103,8 @@ import com.google.android.systemui.statusbar.policy.BatteryControllerImplGoogle;
 import com.google.android.systemui.elmyra.ServiceConfigurationGoogle;
 import com.google.android.systemui.statusbar.policy.dagger.SystemUIGooglePolicyModule;
 
+import com.android.systemui.statusbar.connectivity.BluetoothModule;
+
 import javax.inject.Named;
 
 import dagger.Binds;
@@ -128,7 +130,8 @@ import dagger.Lazy;
         ColumbusModule.class,
         StatusBarEventsModule.class,
         SystemUIGooglePolicyModule.class,
-        RotationLockModule.class
+        RotationLockModule.class,
+        BluetoothModule.class
 })
 public abstract class SystemUIGoogleModule {
 
