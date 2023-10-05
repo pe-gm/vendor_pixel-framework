@@ -175,6 +175,14 @@
             settings:controller="com.android.settings.display.ScreenResolutionController"
             settings:keywords="@string/keywords_screen_resolution" />
 
+        <com.android.settings.display.DcDimmingPreference
+            android:key="dc_dimming"
+            android:title="@string/dc_dimming_title"
+            android:fragment="com.android.settings.display.DcDimmingSettings"
+            android:widgetLayout="@null"
+            settings:widgetLayout="@null"
+            settings:keywords="@string/keywords_display_dc_dimming"/>
+
         <SwitchPreference
             android:key="display_white_balance"
             android:summary="@string/display_white_balance_summary"
