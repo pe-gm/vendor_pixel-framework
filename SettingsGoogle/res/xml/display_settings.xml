@@ -32,6 +32,14 @@
             android:fragment="com.android.settings.accessibility.ToggleReduceBrightColorsPreferenceFragment"
             settings:controller="com.android.settings.accessibility.ReduceBrightColorsPreferenceController"/>
 
+        <com.android.settings.display.DcDimmingPreference
+            android:key="dc_dimming"
+            android:title="@string/dc_dimming_title"
+            android:fragment="com.android.settings.display.DcDimmingSettings"
+            android:widgetLayout="@null"
+            settings:widgetLayout="@null"
+            settings:keywords="@string/keywords_display_dc_dimming"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -174,14 +182,6 @@
             android:title="@string/screen_resolution_title"
             settings:controller="com.android.settings.display.ScreenResolutionController"
             settings:keywords="@string/keywords_screen_resolution" />
-
-        <com.android.settings.display.DcDimmingPreference
-            android:key="dc_dimming"
-            android:title="@string/dc_dimming_title"
-            android:fragment="com.android.settings.display.DcDimmingSettings"
-            android:widgetLayout="@null"
-            settings:widgetLayout="@null"
-            settings:keywords="@string/keywords_display_dc_dimming"/>
 
         <SwitchPreference
             android:key="display_white_balance"
